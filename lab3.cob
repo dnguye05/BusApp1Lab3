@@ -1,6 +1,6 @@
       ******************************************************************
       *Author: David Nguyen
-      *Date: October 6, 2021
+      *Date: October 7, 2021
       *Purpose: lab3
       ******************************************************************
        IDENTIFICATION DIVISION.
@@ -105,9 +105,10 @@
            WRITE PRNT-REC
                AFTER ADVANCING 1 LINE.
        1500-LOOP.
-           PERFORM 1600-PRINT-NAMES.
+           PERFORM 1600-PRINT-INFO.
+           PERFORM 1700-COMPUTE-MONEY.
            PERFORM 2000-READ-INPUT.
-       1600-PRINT-NAMES.
+       1600-PRINT-INFO.
            MOVE I-NAME TO L-NAME.
            MOVE I-MAJOR TO L-MAJOR.
            MOVE I-YEAR TO L-YEAR.
@@ -121,6 +122,7 @@
            MOVE D-PAID3 TO L-PAID3NUM.
            MOVE I-PAID4 TO D-PAID4.
            MOVE D-PAID4 TO L-PAID4NUM.
+       1700-COMPUTE-MONEY.
            COMPUTE D-TOTPAID = D-PAID1 + D-PAID2 + D-PAID3 + D-PAID4.
            MOVE D-TOTPAID TO L-TOTPAIDNUM.
            COMPUTE D-BALANCE = D-LOAN - D-TOTPAID.
